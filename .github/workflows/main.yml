@@ -44,7 +44,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/BookingAPI:0.0.1
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/bookingapi:0.0.1
 
       - name: Deploy to Test Server
         uses: appleboy/ssh-action@master
@@ -54,7 +54,7 @@ jobs:
           password: ${{ secrets.SERVER_PASSWORD }}
           port: ${{ secrets.SERVER_PORT }}
           script: |
-            sudo docker pull daniel0k/BookingAPI:0.1.0
-            docker stop BookingAPI_test_latest_container
-            docker rm BookingAPI_test_latest_container
-            sudo docker run --name=BookingAPI_test_latest_container -d -p 83:80 daniel0k/BookingAPI:0.1.0
+            sudo docker pull daniel0k/bookingapi:0.1.0
+            docker stop bookingapi_test_latest_container
+            docker rm bookingapi_test_latest_container
+            sudo docker run --name=bookingapi_test_latest_container -d -p 83:80 daniel0k/bookingapi:0.1.0
