@@ -24,7 +24,7 @@ jobs:
         uses: actions/upload-artifact@v2.2.2
         with:
          name: website
-         path: WebBookingApp/website/**
+         path: BookingAPI/website/**
          if-no-files-found: error    
 #            - name: Test
 #              run: dotnet test --no-build --verbosity normal
