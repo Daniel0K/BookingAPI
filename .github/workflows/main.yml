@@ -14,12 +14,12 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 6.0.x
-            - name: Restore dependencies
-              run: dotnet restore
-            - name: Build
-              run: dotnet build --no-restore
-            - name: Publish
-              run: dotnet publish WebBookingApp/WebBookingApp.csproj -c Release -o website
+        - name: Restore dependencies
+          run: dotnet restore
+        - name: Build
+          run: dotnet build --no-restore
+        - name: Publish
+          run: dotnet publish WebBookingApp/WebBookingApp.csproj -c Release -o website
             
 #            - name: Test
 #              run: dotnet test --no-build --verbosity normal
